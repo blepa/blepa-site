@@ -1,0 +1,26 @@
+<div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    {{ if ( ne .Site.Title "" ) }}
+    <a href="{{ .Site.BaseURL | relLangURL }}"> {{ .Site.Title }} </a>
+    {{ end }}</div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    {{ with .Site.Params.Slogan }}
+    <p class="site-description">{{ . | default "" | safeHTML }}</p>
+    {{ end }}
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        {{ $page := . }}
+        {{ range $name, $taxonomy := .Site.Taxonomies.mtypes }}
+          <li><a href="/mtypes/{{ $name | urlize }}">{{ $name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+  </div>

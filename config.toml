@@ -1,0 +1,15 @@
+baseurl = "https://blepa.github.io/"
+#relativeURLs = true
+title = "Bartosz Lepa"
+author = "Bartosz Lepa"
+copyright = "Copyright (c) 1018, Bartosz Lepa; all rights reserved."
+canonifyurls = true
+paginate = 10
+
+theme = "nederburg"
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    mtype = "mtypes"
+
